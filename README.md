@@ -1,4 +1,4 @@
-# AI-DIARY-MADRID
+# CLAUDE-IA-OCR
 
 ### ESP
 Esto es un repositorio dedicado al procesamiento de PDF's a traves de inteligencia artificial, en esté documento se puede encontrar todo el proceso realizado por mi parte, este proyecto se ha realizado con el proposito de documentar y proporcionar una serie de procedimientos con tal de cumplir esa tarea, aparte de que es un proyecto de la FCT24-25.
