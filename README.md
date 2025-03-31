@@ -5,6 +5,3 @@ Esto es un repositorio dedicado al procesamiento de PDF's a traves de inteligenc
 
 ### [ENG](docs/eng.md)
 This is a repository dedicated to processing PDFs through artificial intelligence. In this document, you can find the entire process carried out by me. This project was created with the purpose of documenting and providing a set of procedures to accomplish this task, in addition to being a project for FCT24-25.
-
-Note: Also, everything in this repository will be in Spanish. Sorry, but I have to write it in Spanish. If you have any comments or suggestions, feel free to send me an email.
-
