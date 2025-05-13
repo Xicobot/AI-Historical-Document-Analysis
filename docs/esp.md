@@ -1,6 +1,6 @@
 # Sistema de Procesamiento por Lotes para Transcripción de Documentos Históricos
 
-## Introducción para Humanidades Digitales
+## Introducción
 
 En el ámbito de las humanidades digitales, la recuperación y procesamiento de fuentes primarias históricas representa uno de los mayores desafíos metodológicos. El presente sistema emerge como una respuesta tecnológica al complejo problema de extraer, procesar y hacer accesible el valioso patrimonio documental relacionado con la historia de la música en textos literarios y periodísticos de épocas pasadas.
 
