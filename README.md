@@ -1,6 +1,6 @@
-# CLAUDE-IA-OCR
+# AI-Historical-Document-Analysis
 
-![img](https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg)
+[![imagen1](https://github.com/user-attachments/assets/e3aa81e7-b50a-489f-9945-b0d3e177950a)](https://Xicobot.github.io)
 
 ### [ESP](docs/esp.md)
 Esto es un repositorio dedicado al procesamiento de PDF's a traves de inteligencia artificial, en esté documento se puede encontrar todo el proceso realizado por mi parte, este proyecto se ha realizado con el proposito de documentar y proporcionar una serie de procedimientos con tal de cumplir esa tarea, aparte de que es un proyecto de la FCT24-25.
