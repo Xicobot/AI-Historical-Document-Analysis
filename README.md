@@ -40,15 +40,7 @@ Desarrollar una metodología reproducible para la identificación automatizada d
 #### Fase 1: Adquisición de Datos (Web Scraping)
 En esta fase voy a poner dos como ejemplo, ya que he trabajado con las dos.
 - [HemerotecaBNE](https://github.com/Rafav/HemerotecaBNE)
-1. Descargar el plugin.
-2. Irse a la pagina de la [Hemeroteca digital](https://hemerotecadigital.bne.es/hd/es/results?parent=674a2e4f-97ed-463c-af7b-072ceb37a1b7&t=date-asc&s=520)
-3. Escoger el numero de paginas a descargar
-![image](https://github.com/user-attachments/assets/20858eda-9e26-4be2-a59c-87002d7330ba)
-Darle al botón de descargar.
-![image](https://github.com/user-attachments/assets/2e54eeec-25aa-46e2-abb1-1969103895d6)
 - [DownThemAll](https://about.downthemall.org/4.0/)
-
-<!-- (Foto de downloadthemall) --->
 
 **Consideraciones éticas**:
 - Respeto a las políticas de uso de las plataformas
