@@ -1,5 +1,3 @@
-I'll translate the document from Spanish to English while maintaining all links and formatting. Here's the full translation:
-
 # AI-Historical-Document-Analysis
 
 [![imagen1](https://github.com/user-attachments/assets/e3aa81e7-b50a-489f-9945-b0d3e177950a)](https://Xicobot.github.io)
