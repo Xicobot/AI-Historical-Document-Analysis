@@ -61,6 +61,7 @@ Darle al botón de descargar.
 - **Normalización de nomenclatura** de archivos
 - **Control de calidad** de imágenes/PDFs
 - **Organización estructural** del corpus
+- **Testeo de Prompt (Prompt engineering)**
 
 #### Fase 3: Procesamiento con IA
 
