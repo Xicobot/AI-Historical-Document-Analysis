@@ -75,13 +75,12 @@ Darle al botón de descargar.
 Eres un asistente especializado en análisis documental. Tu tarea es analizar el contenido de un periódico histórico del siglo XIX y extraer ÚNICAMENTE noticias relacionadas con música en cualquiera de sus manifestaciones. INSTRUCCIONES: 1. Identifica TODAS las noticias que contengan referencias musicales, incluyendo: - Bailes (tambíen los populares como jota,aurresku, fandango, etc.) - Interpretaciones musicales (serenatas, conciertos) - Agrupaciones musicales (sextetos, orquestas, bandas, rondallas, estduiantinas, tunas, coros, orfeones) - Instrumentos musicales (piano, guitarra, etc.) - Compositores y músicos - Cantantes - Teatros y lugares de actuación musical - Romances, odas, tonadillas, zarzuela, charanga y poesía cantable -Música sacra -Crítica musical - Educación musical -Términos de solfeo, armonía, partitura, etc. - Teatro, representación o actuación ya sean realizadas, canceladas, suspendidas, aplazadas o "no hay". Cualquier mención que tenga relación con música. 1. Devuelve EXCLUSIVAMENTE un objeto JSON con la siguiente estructura: ```json { "noticias_musicales": [ { "id": 1, "texto_completo": "Texto íntegro de la noticia sin modificar ni acortar.", "pagina": "Número de página donde aparece" }, { "id": 2, "texto_completo": "...", "pagina": "Número de página donde aparece" } ], "total_noticias": 0, "fecha_periodico": "Fecha del periódico analizado" } IMPORTANTE: Devuelva solo el JSON solicitado, sin ningún comentario adicional. El json debe contener solo noticias musicales, extrae la fecha del propio nombre del pdf, y eliminando caracteres como "/n" o "\n" , comillas simples o dobles anidadas.
 ```
 
-
 En esté prompt se aclaran cosas especificas, como el formato del output y las cosas que queremos que extraiga la IA.
 
 ### 2.3 Validación Estadística
 
 #### Diseño Muestral
-- **Población**: N documentos totales
+- **Población**: 365 documentos totales
 - **Nivel de confianza**: 95%
 - **Margen de error**: 5%
 - **Muestra**: [Díario de Madrid](xicobot.github.io), en el que 17 de 365 PDF's tienen algún error de OCR.
@@ -113,15 +112,6 @@ Estrategias implementadas:
 - **Interfaces estandarizadas** para diferentes tipos de corpus
 
 ### 3.2 Interface de Investigación
-
-#### Visualización Interactiva
-```html
-<!-- Sistema de navegación dual: resultados + visualización PDF -->
-<div class="research-interface">
-  <div class="results-panel"><!-- Resultados estructurados --></div>
-  <div class="document-viewer"><!-- Visualización sincronizada --></div>
-</div>
-```
 
 #### Funcionalidades Académicas
 - **Navegación por categorías** temáticas
@@ -184,54 +174,20 @@ El protocolo desarrollado es aplicable a:
 - **Almacenamiento**: [Volumen de datos]
 - **Red**: Conexión estable para APIs de IA
 
-## 7. Consideraciones Éticas y Legales
-
-### 7.1 Propiedad Intelectual
-- Respeto a **derechos de autor** de documentos
-- **Uso académico** bajo principios de fair use
-- **Atribución adecuada** de fuentes primarias
-
-### 7.2 Transparencia Metodológica
-- **Código abierto** disponible en repositorio público
-- **Documentación completa** del proceso
-- **Datos de entrenamiento** y validación accesibles
-
-### 7.3 Privacidad y Datos Sensibles
-- **Anonimización** cuando corresponda
-- **Protocolo de seguridad** para documentos sensibles
-
-## 8. Limitaciones y Trabajo Futuro
-
-### 8.1 Limitaciones Actuales
-- Dependencia de la calidad del material digitalizado
-- Posibles sesgos en la selección automatizada
-- Limitaciones linguísticas de los modelos de IA
-
-### 8.2 Líneas de Desarrollo
-- **Integración con linked data** y ontologías especializadas
-- **Análisis de sentimientos** y tonalidad histórica
-- **Comparación temporal** automatizada
-- **Multimodalidad**: integración de imágenes y texto
-
-## 9. Conclusiones
+## 7. Conclusiones
 
 Este proyecto demuestra la viabilidad de aplicar técnicas de inteligencia artificial al análisis sistemático de documentos históricos, ofreciendo nuevas posibilidades para la investigación en humanidades digitales. La metodología desarrollada no solo acelera el proceso de análisis sino que también permite identificar patrones y conexiones que podrían pasar desapercibidos en el análisis manual tradicional.
 
 La combinación de rigor académico tradicional con innovación tecnológica abre nuevos horizontes para la investigación humanística, manteniendo siempre la centralidad del criterio experto y la interpretación cultural informada.
 
-## 10. Referencias y Recursos
+## 8. Referencias y Recursos
 
-### 10.1 Bibliografía Académica
-- Moretti, F. (2013). *Distant Reading*. Verso Books.
-- Hockey, S. (2004). "The History of Humanities Computing: An Overview". En *A Companion to Digital Humanities*.
-- Ramsay, S. (2011). *Reading Machines: Toward an Algorithmic Criticism*.
-
-### 10.2 Recursos Técnicos
+### 8.1 Recursos Técnicos
 - **Repositorio del proyecto**: [URL del repositorio]
 - **Documentación técnica**: [Enlaces a documentación específica]
 - **Datasets**: [Información sobre acceso a datos]
 
-### 10.3 Herramientas y Librerías
+### 8.2 Herramientas y Librerías
 - Anthropic Claude API: https://docs.anthropic.com/
 - EasyOCR: https://github.com/JaidedAI/EasyOCR
 - Digital Humanities toolkit recommendations
