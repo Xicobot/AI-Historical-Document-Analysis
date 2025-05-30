@@ -77,15 +77,8 @@ Eres un asistente especializado en análisis documental. Tu tarea es analizar el
 
 En esté prompt se aclaran cosas especificas, como el formato del output y las cosas que queremos que extraiga la IA.
 
-### 2.3 Validación Estadística
-
-#### Diseño Muestral
-- **Población**: 365 documentos totales
-- **Nivel de confianza**: 95%
-- **Margen de error**: 5%
-- **Muestra**: [Díario de Madrid](xicobot.github.io), en el que 17 de 365 PDF's tienen algún error de OCR.
-
 #### Métricas de Evaluación
+Para saber que la información extraida por la IA es de buena calidad, tenemos en cuenta los siguientes puntos:
 - **Precisión**: Relevancia de la información extraída
 - **Exhaustividad**: Cobertura de las referencias presentes
 - **Coherencia**: Consistencia en la categorización
@@ -111,28 +104,14 @@ Estrategias implementadas:
 - **Scripts automatizados** para replicación
 - **Interfaces estandarizadas** para diferentes tipos de corpus
 
-### 3.2 Interface de Investigación
-
-#### Funcionalidades Académicas
-- **Navegación por categorías** temáticas
-- **Búsqueda semántica** avanzada
-- **Exportación** a formatos académicos (LaTeX, BibTeX)
-- **Anotación colaborativa** para validación
-
 ## 4. Resultados y Análisis
 
 ### 4.1 Rendimiento del Sistema
 - **Tiempo de procesamiento**: [X] documentos/hora
-- **Precisión promedio**: [X]% en identificación de referencias
-- **Reducción de tiempo manual**: [X]% respecto a métodos tradicionales
+- **Precisión promedio**: [95]% en identificación de referencias
+- **Reducción de tiempo manual**: [3000]Horas aproximadas respecto a métodos tradicionales
 
-### 4.2 Descubrimientos Académicos
-[Incluir hallazgos específicos del análisis, por ejemplo:]
-- Patrones de recepción cultural en el período estudiado
-- Evolución de referencias literarias a lo largo del tiempo
-- Conexiones interdisciplinarias identificadas
-
-### 4.3 Validación por Expertos
+### 4.2 Validación por Expertos
 - **Evaluación cualitativa** por especialistas en la disciplina
 - **Contraste** con investigaciones previas
 - **Identificación** de nuevas líneas de investigación
@@ -174,6 +153,16 @@ El protocolo desarrollado es aplicable a:
 - **Almacenamiento**: [Volumen de datos]
 - **Red**: Conexión estable para APIs de IA
 
+
+### Validación Estadística
+
+#### Diseño Muestral
+- **Población**: 365 documentos totales
+- **Nivel de confianza**: 95%
+- **Margen de error**: 5%
+- **Muestra**: [Díario de Madrid](xicobot.github.io), en el que 17 de 365 PDF's tienen algún error de OCR.
+
+
 ## 7. Conclusiones
 
 Este proyecto demuestra la viabilidad de aplicar técnicas de inteligencia artificial al análisis sistemático de documentos históricos, ofreciendo nuevas posibilidades para la investigación en humanidades digitales. La metodología desarrollada no solo acelera el proceso de análisis sino que también permite identificar patrones y conexiones que podrían pasar desapercibidos en el análisis manual tradicional.
@@ -189,12 +178,11 @@ La combinación de rigor académico tradicional con innovación tecnológica abr
 
 ### 8.2 Herramientas y Librerías
 - Anthropic Claude API: https://docs.anthropic.com/
-- EasyOCR: https://github.com/JaidedAI/EasyOCR
-- Digital Humanities toolkit recommendations
+- Hemeroteca Digital Nacional de España: https://hemerotecadigital.bne.es/
 
 ---
 
-**Nota**: Esta documentación sigue estándares académicos para proyectos de humanidades digitales y puede adaptarse según las especificidades de cada investigación particular.
+**Nota**: Esta documentación sigue estándares académicos para proyectos de humanidades digitales y puede adaptarse según las especificidades de cada investigación particular, para el proceso completo y paso a paso, [pincha aquí](/docs/documetacionproceso.md).
 
 ### [ESP](README.md)
 Esto es un repositorio dedicado al procesamiento de PDF's a traves de inteligencia artificial para humanidades digitales, en esté documento se puede encontrar todo el proceso realizado por mi parte, este proyecto se ha realizado con el proposito de documentar y proporcionar una serie de procedimientos con tal de cumplir esa tarea, aparte de que es un proyecto de la FCT24-25.
