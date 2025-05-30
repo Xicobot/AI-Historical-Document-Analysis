@@ -48,8 +48,6 @@ Darle al botón de descargar.
 ![image](https://github.com/user-attachments/assets/2e54eeec-25aa-46e2-abb1-1969103895d6)
 - [DownThemAll](https://about.downthemall.org/4.0/)
 
-
-
 <!-- (Foto de downloadthemall) --->
 
 **Consideraciones éticas**:
@@ -59,26 +57,22 @@ Darle al botón de descargar.
 
 #### Fase 2: Preprocesamiento
 - **Normalización de nomenclatura** de archivos
-- **Control de calidad** de imágenes/PDFs
+- **Control de calidad** de imágenes/PDFs 
 - **Organización estructural** del corpus
-- **Testeo de Prompt (Prompt engineering)**
+- **Testeo de Prompts (Prompt engineering vía web o batch)**
+
+![image](https://github.com/user-attachments/assets/ddb54509-c9ce-42f5-b1ec-7efecb8774a2)
 
 #### Fase 3: Procesamiento con IA
 
 **Prompt Engineering Especializado**:
-```json
-{
-  "contexto_disciplinar": "Análisis filológico e histórico-cultural",
-  "categorias_extraccion": [
-    "referencias_literarias_directas",
-    "referencias_literarias_indirectas", 
-    "manifestaciones_culturales",
-    "contexto_sociohistorico"
-  ],
-  "formato_salida": "JSON estructurado",
-  "validacion": "transcripcion_literal_obligatoria"
-}
+- En el que se requiere tener un poco de conocimiento del tema de los PDF's para poder hacer un prompt que haga bien su funcíon.
+
+**Prompt especializado en OCR del Díario de Madrid de 1788**
+```txt
+Eres un asistente especializado en análisis documental. Tu tarea es analizar el contenido de un periódico histórico del siglo XIX y extraer ÚNICAMENTE noticias relacionadas con música en cualquiera de sus manifestaciones. INSTRUCCIONES: 1. Identifica TODAS las noticias que contengan referencias musicales, incluyendo: - Bailes (tambíen los populares como jota,aurresku, fandango, etc.) - Interpretaciones musicales (serenatas, conciertos) - Agrupaciones musicales (sextetos, orquestas, bandas, rondallas, estduiantinas, tunas, coros, orfeones) - Instrumentos musicales (piano, guitarra, etc.) - Compositores y músicos - Cantantes - Teatros y lugares de actuación musical - Romances, odas, tonadillas, zarzuela, charanga y poesía cantable -Música sacra -Crítica musical - Educación musical -Términos de solfeo, armonía, partitura, etc. - Teatro, representación o actuación ya sean realizadas, canceladas, suspendidas, aplazadas o "no hay". Cualquier mención que tenga relación con música. 1. Devuelve EXCLUSIVAMENTE un objeto JSON con la siguiente estructura: ```json { "noticias_musicales": [ { "id": 1, "texto_completo": "Texto íntegro de la noticia sin modificar ni acortar.", "pagina": "Número de página donde aparece" }, { "id": 2, "texto_completo": "...", "pagina": "Número de página donde aparece" } ], "total_noticias": 0, "fecha_periodico": "Fecha del periódico analizado" } IMPORTANTE: Devuelva solo el JSON solicitado, sin ningún comentario adicional. El json debe contener solo noticias musicales, extrae la fecha del propio nombre del pdf, y eliminando caracteres como "/n" o "\n" , comillas simples o dobles anidadas.
 ```
+En esté prompt se aclaran cosas especificas, como el formato del output y las cosas que queremos que extraiga la IA.
 
 ### 2.3 Validación Estadística
 
@@ -86,7 +80,7 @@ Darle al botón de descargar.
 - **Población**: N documentos totales
 - **Nivel de confianza**: 95%
 - **Margen de error**: 5%
-- **Muestra**: n documentos seleccionados aleatoriamente
+- **Muestra**: [Díario de Madrid](xicobot.github.io), en el que 17 de 365 PDF's tienen algún error de OCR.
 
 #### Métricas de Evaluación
 - **Precisión**: Relevancia de la información extraída
