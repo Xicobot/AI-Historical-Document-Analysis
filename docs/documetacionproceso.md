@@ -66,9 +66,13 @@ Eres un asistente especializado en análisis documental. Tu tarea es analizar el
 ```
 
 ### 2.3 Lanzar batch
-Para lanzar un batch, necesitamos tener una estructura organizada, primero, para que el [script](/sw/lanzarbatch.sh) a ejecutar envie todos los pdfs del directorío, lo que hace que:
+Para lanzar un batch, necesitamos tener una estructura organizada, primero, para que el [lanzarbatch.sh](/sw/lanzarbatch.sh) a ejecutar envie todos los pdfs del directorío, lo que hace que:
 1. Envia el pdf por la API, dejando un "nombre del archivo"batch_output.txt con un ID del mensaje que se recoge mas tarde.
-2. Una vez procesado, esto lo podemos mirar en la consola de anthropic, la cual nos mostrar
+
+### 2.4 Descargar batches
+Una vez procesado, esto lo podemos mirar en la consola de anthropic, la cual nos muestra el batch con el msg_idxxxxx, el cual luego se recupera con [descargarbatches.sh](/sw/descargarbatches.sh)
+
+### 2.5 Limpieza manual
 
 ## Bibliografía:
 Anthropic API: https://docs.anthropic.com/en/docs/get-started
