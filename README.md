@@ -134,15 +134,9 @@ El protocolo desarrollado es aplicable a:
 ### 6.2 Tecnologías Utilizadas
 - **IA**: Claude AI (Anthropic) / GPT (OpenAI)
 - **OCR/HTR**: Tesseract, EasyOCR, Surya
-- **Procesamiento**: Python, JavaScript
+- **Procesamiento**: Python, Claude AI
 - **Visualización**: HTML5, CSS3, JavaScript
 - **Datos**: JSON, CSV para intercambio
-
-### 6.3 Requisitos de Infraestructura
-- **Computacional**: [Especificar recursos necesarios]
-- **Almacenamiento**: [Volumen de datos]
-- **Red**: Conexión estable para APIs de IA
-
 
 ### Validación Estadística
 
@@ -151,7 +145,6 @@ El protocolo desarrollado es aplicable a:
 - **Nivel de confianza**: 95%
 - **Margen de error**: 5%
 - **Muestra**: [Díario de Madrid](xicobot.github.io), en el que 17 de 365 PDF's tienen algún error de OCR.
-
 
 ## 7. Conclusiones
 
@@ -162,8 +155,8 @@ La combinación de rigor académico tradicional con innovación tecnológica abr
 ## 8. Referencias y Recursos
 
 ### 8.1 Recursos Técnicos
-- **Repositorio del proyecto**: [URL del repositorio]
-- **Documentación técnica**: [Enlaces a documentación específica]
+- **Repositorio del proyecto**: [Xicobot.github.io]
+- **Documentación técnica**: []
 - **Datasets**: [Información sobre acceso a datos]
 
 ### 8.2 Herramientas y Librerías
