@@ -50,7 +50,7 @@ Nos sacaría del entorno virtual.
 ![image](https://github.com/user-attachments/assets/d72f672f-e2a1-44a1-9bcc-9a728ce39857)
 
 - Una vez hecho, necesitaremos la clave de anthropic, la cual se consigue teniendo una cuenta de pago, y accediendo a tu consola de anthropic.
-https://console.anthropic.com
+- https://console.anthropic.com
 - Una vez tengamos la API, lo que haremos es importarla cada vez que entremos al entorno virtual, con el comando:
 `export ANTHROPIC_API_KEY="TU API KEY AQUÍ"`
 
