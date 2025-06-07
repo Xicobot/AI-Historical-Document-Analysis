@@ -25,4 +25,13 @@ Una vez descargados todos, requerimos de un poquito de organización para hacerl
 ### 1.3 Estimacíon de costes
 Antes de procesar nada, se debería de hacer una estimacíon de costes, la cual es X*0.05 (Siendo X el numero de paginas totales de todos los PDF's), dejo un script el cual es capaz de calcular el numero total de paginas de un volumen grande de ejemplares, el [script](/sw/contar.sh) que deja como resultado [total_paginas.txt](/sw/total_paginas.txt).
 
-## 2. 
+## 2 Procesamiento a traves de IA
+1.Primero, creamos el entorno de python.
+`python -m venv claude`
+Luego accedemos a el.
+`source claude/bin/activate`
+Y si queremos desactivarlo, con poner 
+`deactivate`
+Nos sacaría del entorno virtual.
+![image](https://github.com/user-attachments/assets/f505dfdf-a110-443d-b207-637d193872d9)
+![image](https://github.com/user-attachments/assets/6b0a6fe1-ad4a-42ba-b3bf-e14c3eeb18ca)
