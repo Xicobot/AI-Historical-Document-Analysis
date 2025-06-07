@@ -25,13 +25,39 @@ Una vez descargados todos, requerimos de un poquito de organización para hacerl
 ### 1.3 Estimacíon de costes
 Antes de procesar nada, se debería de hacer una estimacíon de costes, la cual es X*0.05 (Siendo X el numero de paginas totales de todos los PDF's), dejo un script el cual es capaz de calcular el numero total de paginas de un volumen grande de ejemplares, el [script](/sw/contar.sh) que deja como resultado [total_paginas.txt](/sw/total_paginas.txt).
 
+---
+
 ## 2 Procesamiento a traves de IA
-1.Primero, creamos el entorno de python con
+### 2.1 Setup del entorno de python y API.
+
+1. Primero, creamos el entorno de python:
 `python -m venv claude`
-Luego accedemos a el:
+2. Accedemos a el:
 `source claude/bin/activate`
-Y si queremos desactivarlo, con poner 
+3. Desactivamos el entorno: 
 `deactivate`
 Nos sacaría del entorno virtual.
 ![image](https://github.com/user-attachments/assets/f505dfdf-a110-443d-b207-637d193872d9)
 ![image](https://github.com/user-attachments/assets/6b0a6fe1-ad4a-42ba-b3bf-e14c3eeb18ca)
+
+- Ahora, instalamos las dependencias de anthropic.
+`pip install anthropic`
+![image](https://github.com/user-attachments/assets/5c03760a-a0be-4a91-aec5-95d3c3f7fdc4)
+
+- Para revisar que todo se ha instalado correctamente:
+`pip list`
+
+![image](https://github.com/user-attachments/assets/d72f672f-e2a1-44a1-9bcc-9a728ce39857)
+
+- Una vez hecho, necesitaremos la clave de anthropic, la cual se consigue teniendo una cuenta de pago, y accediendo a tu consola de anthropic.
+https://console.anthropic.com
+- Una vez tengamos la API, lo que haremos es importarla cada vez que entremos al entorno virtual, con el comando:
+`export ANTHROPIC_API_KEY="TU API KEY AQUÍ"`
+
+
+
+
+
+
+## Bibliografía:
+Anthropic API: https://docs.anthropic.com/en/docs/get-started
