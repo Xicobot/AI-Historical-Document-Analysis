@@ -22,6 +22,7 @@ la pagina a hacer scrapping.
 ### 1.2 Normalizacion y organizacion de PDF's
 Una vez descargados todos, requerimos de un poquito de organización para hacerlo mas sistematico, primero en la descarga, se tenía en cuenta en el proyecto un drive compartido, en el que se iba actualizando el proceso, y mientras se descargaban en una carpeta en concreto, al final de cada descarga masiva, primero se contaban las paginas por pdf para cuantificar el numero de paginas en total y así poder hacer una estimacíon de costes, y despues se organizaban por años a traves de esté [script](/sw/organizadoraños.sh).
 
-
-
 ### 1.3 Estimacíon de costes
+Antes de procesar nada, se debería de hacer una estimacíon de costes, la cual es X*0.05 (Siendo X el numero de paginas totales de todos los PDF's), dejo un script el cual es capaz de calcular el numero total de paginas de un volumen grande de ejemplares, el [script](/sw/contar.sh) que deja como resultado [total_paginas.txt](/sw/total_paginas.txt).
+
+## 2. 
