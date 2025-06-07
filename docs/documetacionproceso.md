@@ -26,9 +26,9 @@ Una vez descargados todos, requerimos de un poquito de organización para hacerl
 Antes de procesar nada, se debería de hacer una estimacíon de costes, la cual es X*0.05 (Siendo X el numero de paginas totales de todos los PDF's), dejo un script el cual es capaz de calcular el numero total de paginas de un volumen grande de ejemplares, el [script](/sw/contar.sh) que deja como resultado [total_paginas.txt](/sw/total_paginas.txt).
 
 ## 2 Procesamiento a traves de IA
-1.Primero, creamos el entorno de python.
+1.Primero, creamos el entorno de python con
 `python -m venv claude`
-Luego accedemos a el.
+Luego accedemos a el:
 `source claude/bin/activate`
 Y si queremos desactivarlo, con poner 
 `deactivate`
