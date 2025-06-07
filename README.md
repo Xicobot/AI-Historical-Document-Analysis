@@ -155,9 +155,9 @@ La combinación de rigor académico tradicional con innovación tecnológica abr
 ## 8. Referencias y Recursos
 
 ### 8.1 Recursos Técnicos
-- **Repositorio del proyecto**: [Xicobot.github.io]
-- **Documentación técnica**: []
-- **Datasets**: [Información sobre acceso a datos]
+- **Repositorio del proyecto**: [[Xicobot.github.io](https://Xicobot.github.io)]
+- **Documentación técnica**: [https://github.com/Xicobot/AI-Historical-Document-Analysis/edit/main/docs/documetacionproceso.md]
+- **Datasets**: [[Información sobre acceso a datos](https://drive.google.com/drive/folders/1OCKzUtLZgnFNtphIlK8gy1NvrY1P7NQX?usp=sharing)]
 
 ### 8.2 Herramientas y Librerías
 - Anthropic Claude API: https://docs.anthropic.com/
