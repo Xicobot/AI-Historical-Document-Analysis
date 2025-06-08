@@ -56,9 +56,11 @@ Nos sacaría del entorno virtual.
 
 ### 2.2 Prompt engineering
 
-Probablemente, la mayor parte del proyecto, se las pasa aquí probando si el prompt funciona o no, ya que para ello, se requiere de muchas horas de prueba y error para conseguir lo que se necesita del pdf.
+Es la parte del proyecto en la que se pone la mayor parte del tiempo investigando ya que se requiere de mucha investigacin, mucha prueba y error, ya que necesitamos ser precisos y concretos para que nos saque la mejor salida posible.
 
 ![image](https://github.com/user-attachments/assets/32c19218-fc00-4fbf-a29b-989c866b44ea)
+
+Al final, el resultado de horas de investigacion en un prompt han resultado los siguientes:
 
 ## Prompt:
 ```prompt
@@ -67,12 +69,27 @@ Eres un asistente especializado en análisis documental. Tu tarea es analizar el
 
 ### 2.3 Lanzar batch
 Para lanzar un batch, necesitamos tener una estructura organizada, primero, para que el [lanzarbatch.sh](/sw/lanzarbatch.sh) a ejecutar envie todos los pdfs del directorío, lo que hace que:
-1. Envia el pdf por la API, dejando un "nombre del archivo"batch_output.txt con un ID del mensaje que se recoge mas tarde.
+1. Envia cada pdf por la API, dejando un "nombre del archivo"batch_order.txt con un ID del mensaje que se recoge mas tarde.
+2. Se lanza de manera masiva, el script repite en bucle el [musica.py](/sw/musica.py), que contiene el prompt, el modelo, y varíos aspectos mas de la inteligencia artificial.
+3. Este proceso puede tardar dependiendo del volumen de archivos que tengamos.
+4. el archivo restante que nos deja, es importante tenerlo en cuenta, ya que contiene el mensaje.
+
+![image](https://github.com/user-attachments/assets/e693e08e-f971-4706-a11b-a94b0aa50c74)
 
 ### 2.4 Descargar batches
-Una vez procesado, esto lo podemos mirar en la consola de anthropic, la cual nos muestra el batch con el msg_idxxxxx, el cual luego se recupera con [descargarbatches.sh](/sw/descargarbatches.sh)
+Una vez procesado, esto lo podemos mirar en la consola de anthropic, la cual nos muestra el batch con el msg_idxxxxx, se recupera con [descargarbatches.sh](/sw/descargarbatches.sh), que nos devuelve un output "Sucio" el que tendremos que limpiar primero con [limpieza.py](/sw/limpieza.py), en el que nos sacará, un formato json que guarda de manera fija los datos para despues enviarselos sin necesidad de tener una base de datos.
 
-### 2.5 Limpieza manual
+![image](https://github.com/user-attachments/assets/2865ab0f-a90d-40ac-aa75-bfacc2be7293)
+
+
+### 2.5 Limpieza manual y obtencion del resultado limpio.
+Ahora, lo que nos generará es un montón de resultados, tenemos dos opciones para lidiar con un volumen tan grande de datos.
+1. Lo juntamos todo en un archivo, y revisamos que errores tiene.
+2. Se revisan los errores uno por uno, viendo así que cosas podrían estár mal, casos en concreto, caracteres mal puestos, cosas del estilo.
+
+(Yo lo que hago es juntarlo todo, y ya lo reviso todo, me ahorra tiempo de estár abriendo archivo por archivo.
+![image](https://github.com/user-attachments/assets/fa29f664-2fa8-42e4-ae83-aa8eedef76a9)
+
 
 ## Bibliografía:
 Anthropic API: https://docs.anthropic.com/en/docs/get-started
