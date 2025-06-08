@@ -162,6 +162,8 @@ La combinación de rigor académico tradicional con innovación tecnológica abr
 ### 8.2 Herramientas y Librerías
 - Anthropic Claude API: https://docs.anthropic.com/
 - Hemeroteca Digital Nacional de España: https://hemerotecadigital.bne.es/
+- Anthropic Claude Code: https://docs.anthropic.com/en/docs/claude-code/overview
+- Primer proyecto de referencia: https://rafav.github.io/diariomadrid/
 
 ---
 
