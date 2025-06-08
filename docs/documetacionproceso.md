@@ -1,96 +1,172 @@
-# Documentación tecnica del procesamiento masivo de PDF's historicos de la Hemeroteca para el proyecto de FCT24-25 y Humanidades digitales
+# Documentación Técnica del Procesamiento Masivo de PDFs Históricos de la Hemeroteca
 
-Esta es la documentacion tecnica, donde encontraras el software y scripts utilizados, tanto para procesar, como para entender un poco el alcance del proyecto.
+## Proyecto FCT24-25 y Humanidades Digitales
 
-## 1. Descarga Masiva a traves de scrapping legitimo.
+Esta documentación técnica describe el software y scripts utilizados para el procesamiento masivo de documentos históricos, así como el alcance y metodología del proyecto de digitalización de la Hemeroteca.
 
-Se debe de tener claro que antes de empezar, necesitamos tener de manera local los PDF's/archivos a descargar, ya que actualmente las IA's no pueden acceder a un corpus de informacioón grande a traves de enlaces.
-Para ello, usaremos herramientas de scrapping legitimo, el cual nos ahorrara tiempo.
+## 1. Descarga Masiva Mediante Scraping Legítimo
 
-### Herramientas utilizadas
-- [HemerotecaBNE](https://github.com/Rafav/HemerotecaBNE)
-1. Descargar el plugin.
-2. Irse a la pagina de la [Hemeroteca digital](https://hemerotecadigital.bne.es/hd/es/results?parent=674a2e4f-97ed-463c-af7b-072ceb37a1b7&t=date-asc&s=520)
-3. Escoger el numero de paginas a descargar
+Antes de iniciar el procesamiento, es fundamental disponer de los archivos PDF localmente, ya que las herramientas de IA actuales no pueden acceder directamente a grandes corpus de información a través de enlaces web. Para optimizar este proceso, utilizamos herramientas de scraping legítimo que automatizan la descarga masiva.
+
+### 1.1 Herramientas Utilizadas
+
+#### HemerotecaBNE
+- **Repositorio**: [HemerotecaBNE](https://github.com/Rafav/HemerotecaBNE)
+
+**Procedimiento de instalación y uso:**
+1. Descargar e instalar el plugin.
+2. Acceder a la [Hemeroteca Digital](https://hemerotecadigital.bne.es/hd/es/results?parent=674a2e4f-97ed-463c-af7b-072ceb37a1b7&t=date-asc&s=520)
+3. Seleccionar el número de páginas a descargar
 ![image](https://github.com/user-attachments/assets/20858eda-9e26-4be2-a59c-87002d7330ba)
-Darle al botón de descargar.
+4. Activar el botón de descarga
 ![image](https://github.com/user-attachments/assets/2e54eeec-25aa-46e2-abb1-1969103895d6)
-- [DownThemAll](https://about.downthemall.org/4.0/)
-Este requiere de todos los enlaces a los pdfs, lo cual nos permitiría descargarlos todos de golpe, evidentemente haciendolo de manera etica para no tener problemas de ningún tipo con
-la pagina a hacer scrapping.
 
-### 1.2 Normalizacion y organizacion de PDF's
-Una vez descargados todos, requerimos de un poquito de organización para hacerlo mas sistematico, primero en la descarga, se tenía en cuenta en el proyecto un drive compartido, en el que se iba actualizando el proceso, y mientras se descargaban en una carpeta en concreto, al final de cada descarga masiva, primero se contaban las paginas por pdf para cuantificar el numero de paginas en total y así poder hacer una estimacíon de costes, y despues se organizaban por años a traves de esté [script](/sw/organizadoraños.sh).
+#### DownThemAll
+- **Sitio oficial**: [DownThemAll 4.0](https://about.downthemall.org/4.0/)
 
-### 1.3 Estimacíon de costes
-Antes de procesar nada, se debería de hacer una estimacíon de costes, la cual es X*0.05 (Siendo X el numero de paginas totales de todos los PDF's), dejo un script el cual es capaz de calcular el numero total de paginas de un volumen grande de ejemplares, el [script](/sw/contar.sh) que deja como resultado [total_paginas.txt](/sw/total_paginas.txt).
+Esta herramienta requiere una lista previa de enlaces directos a los PDFs, permitiendo la descarga simultánea de múltiples archivos. Es importante implementar descargas éticas para evitar sobrecargar los servidores de la plataforma.
+
+### 1.2 Normalización y Organización de PDFs
+
+Una vez completadas las descargas, es esencial implementar un sistema de organización sistemática. El flujo de trabajo establecido incluye:
+
+1. **Almacenamiento centralizado**: Utilización de un drive compartido para monitorizar el progreso del proyecto
+2. **Cuantificación de contenido**: Conteo de páginas por PDF para estimar costes de procesamiento
+3. **Organización cronológica**: Clasificación automática por años mediante el [script de organización](/sw/organizadoraños.sh)
+
+### 1.3 Estimación de Costes
+
+Es crucial realizar una estimación económica antes del procesamiento masivo. La fórmula de cálculo es:
+
+**Coste = Número total de páginas × 0.05€**
+
+Para automatizar este cálculo, disponemos del [script de conteo](/sw/contar.sh), que genera el archivo [total_paginas.txt](/sw/total_paginas.txt) con el resultado final.
 
 ---
 
-## 2 Procesamiento a traves de IA
-### 2.1 Setup del entorno de python y API.
+## 2. Procesamiento Mediante Inteligencia Artificial
 
-1. Primero, creamos el entorno de python:
-`python -m venv claude`
-2. Accedemos a el:
-`source claude/bin/activate`
-3. Desactivamos el entorno: 
-`deactivate`
-Nos sacaría del entorno virtual.
+### 2.1 Configuración del Entorno Python y API
+
+**Creación del entorno virtual:**
+1. Crear el entorno:
+   ```bash
+   python -m venv claude
+   ```
+
+2. Activar el entorno:
+   ```bash
+   source claude/bin/activate
+   ```
+
+3. Desactivar cuando sea necesario:
+   ```bash
+   deactivate
+   ```
+
 ![image](https://github.com/user-attachments/assets/f505dfdf-a110-443d-b207-637d193872d9)
 ![image](https://github.com/user-attachments/assets/6b0a6fe1-ad4a-42ba-b3bf-e14c3eeb18ca)
 
-- Ahora, instalamos las dependencias de anthropic.
-`pip install anthropic`
+**Instalación de dependencias:**
+```bash
+pip install anthropic
+```
 ![image](https://github.com/user-attachments/assets/5c03760a-a0be-4a91-aec5-95d3c3f7fdc4)
 
-- Para revisar que todo se ha instalado correctamente:
-`pip list`
-
+**Verificación de la instalación:**
+```bash
+pip list
+```
 ![image](https://github.com/user-attachments/assets/d72f672f-e2a1-44a1-9bcc-9a728ce39857)
 
-- Una vez hecho, necesitaremos la clave de anthropic, la cual se consigue teniendo una cuenta de pago, y accediendo a tu consola de anthropic.
-- https://console.anthropic.com
-- Una vez tengamos la API, lo que haremos es importarla cada vez que entremos al entorno virtual, con el comando:
-`export ANTHROPIC_API_KEY="TU API KEY AQUÍ"`
+**Configuración de la API Key:**
+- Obtener la clave desde la [consola de Anthropic](https://console.anthropic.com) (requiere cuenta de pago)
+- Configurar la variable de entorno:
+  ```bash
+  export ANTHROPIC_API_KEY="TU API KEY AQUÍ"
+  ```
 
-### 2.2 Prompt engineering
+### 2.2 Ingeniería de Prompts
 
-Es la parte del proyecto en la que se pone la mayor parte del tiempo investigando ya que se requiere de mucha investigacin, mucha prueba y error, ya que necesitamos ser precisos y concretos para que nos saque la mejor salida posible.
+Esta fase constituye el núcleo del proyecto, requiriendo investigación exhaustiva y múltiples iteraciones de prueba y error. El objetivo es desarrollar prompts precisos y específicos que optimicen la calidad de la extracción de información musical.
 
 ![image](https://github.com/user-attachments/assets/32c19218-fc00-4fbf-a29b-989c866b44ea)
 
-Al final, el resultado de horas de investigacion en un prompt han resultado los siguientes:
+Tras horas de investigación y refinamiento, el prompt final desarrollado es:
 
-## Prompt:
+## Prompt Optimizado:
 ```prompt
 Eres un asistente especializado en análisis documental. Tu tarea es analizar el contenido de un periódico histórico del siglo XIX y extraer ÚNICAMENTE noticias relacionadas con música en cualquiera de sus manifestaciones. INSTRUCCIONES: 1. Identifica TODAS las noticias que contengan referencias musicales, incluyendo: - Bailes (tambíen los populares como jota,aurresku, fandango, etc.) - Interpretaciones musicales (serenatas, conciertos) - Agrupaciones musicales (sextetos, orquestas, bandas, rondallas, estduiantinas, tunas, coros, orfeones) - Instrumentos musicales (piano, guitarra, etc.) - Compositores y músicos - Cantantes - Teatros y lugares de actuación musical - Romances, odas, tonadillas, zarzuela, charanga y poesía cantable -Música sacra -Crítica musical - Educación musical -Términos de solfeo, armonía, partitura, etc. - Teatro, representación o actuación ya sean realizadas, canceladas, suspendidas, aplazadas o "no hay". Cualquier mención que tenga relación con música. 1. Devuelve EXCLUSIVAMENTE un objeto JSON con la siguiente estructura: ```json { "noticias_musicales": [ { "id": 1, "texto_completo": "Texto íntegro de la noticia sin modificar ni acortar.", "pagina": "Número de página donde aparece" }, { "id": 2, "texto_completo": "...", "pagina": "Número de página donde aparece" } ], "total_noticias": 0, "fecha_periodico": "Fecha del periódico analizado" } IMPORTANTE: Devuelva solo el JSON solicitado, sin ningún comentario adicional. El json debe contener solo noticias musicales, extrae la fecha del propio nombre del pdf, y eliminando caracteres como "/n" o "\n" , comillas simples o dobles anidadas.
 ```
 
-### 2.3 Lanzar batch
-Para lanzar un batch, necesitamos tener una estructura organizada, primero, para que el [lanzarbatch.sh](/sw/lanzarbatch.sh) a ejecutar envie todos los pdfs del directorío, lo que hace que:
-1. Envia cada pdf por la API, dejando un "nombre del archivo"batch_order.txt con un ID del mensaje que se recoge mas tarde.
-2. Se lanza de manera masiva, el script repite en bucle el [musica.py](/sw/musica.py), que contiene el prompt, el modelo, y varíos aspectos mas de la inteligencia artificial.
-3. Este proceso puede tardar dependiendo del volumen de archivos que tengamos.
-4. el archivo restante que nos deja, es importante tenerlo en cuenta, ya que contiene el mensaje.
+### 2.3 Lanzamiento de Procesamiento Batch
+
+Para el procesamiento masivo, es necesario mantener una estructura organizativa específica. El script [lanzarbatch.sh](/sw/lanzarbatch.sh) automatiza el envío de PDFs mediante las siguientes acciones:
+
+1. **Envío individual**: Cada PDF se procesa individualmente a través de la API
+2. **Registro de identificadores**: Se genera un archivo "nombre_del_archivo_batch_order.txt" con el ID del mensaje para posterior recuperación
+3. **Procesamiento automático**: El script ejecuta iterativamente [musica.py](/sw/musica.py), que contiene el prompt, configuración del modelo y parámetros de la IA
+4. **Escalabilidad temporal**: El tiempo de procesamiento es proporcional al volumen de archivos
 
 ![image](https://github.com/user-attachments/assets/e693e08e-f971-4706-a11b-a94b0aa50c74)
 
-### 2.4 Descargar batches
-Una vez procesado, esto lo podemos mirar en la consola de anthropic, la cual nos muestra el batch con el msg_idxxxxx, se recupera con [descargarbatches.sh](/sw/descargarbatches.sh), que nos devuelve un output "Sucio" el que tendremos que limpiar primero con [limpieza.py](/sw/limpieza.py), en el que nos sacará, un formato json que guarda de manera fija los datos para despues enviarselos sin necesidad de tener una base de datos.
+### 2.4 Descarga y Recuperación de Resultados
+
+Una vez completado el procesamiento (verificable desde la consola de Anthropic mediante los msg_idxxxxx), la recuperación se realiza con [descargarbatches.sh](/sw/descargarbatches.sh). Este proceso genera una salida inicial que requiere limpieza posterior.
+
+La fase de limpieza utiliza [limpieza.py](/sw/limpieza.py) para:
+- Normalizar el formato JSON
+- Estructurar los datos de manera consistente
+- Eliminar caracteres especiales y errores de codificación
+- Preparar los datos para su implementación sin necesidad de base de datos
 
 ![image](https://github.com/user-attachments/assets/2865ab0f-a90d-40ac-aa75-bfacc2be7293)
 
-### 2.5 Limpieza manual y obtencion del resultado limpio.
-Ahora, lo que nos generará es un montón de resultados, tenemos dos opciones para lidiar con un volumen tan grande de datos.
-1. Lo juntamos todo en un archivo, y revisamos que errores tiene.
-2. Se revisan los errores uno por uno, viendo así que cosas podrían estár mal, casos en concreto, caracteres mal puestos, cosas del estilo.
+### 2.5 Limpieza Manual y Obtención del Resultado Final
 
-(Yo lo que hago es juntarlo todo, y ya lo reviso todo, me ahorra tiempo de estár abriendo archivo por archivo.
+Para el manejo eficiente de grandes volúmenes de datos, se proponen dos estrategias:
+
+1. **Consolidación masiva**: Unificación de todos los resultados en un archivo único para revisión global
+2. **Revisión individual**: Verificación archivo por archivo para casos específicos y corrección de errores puntuales
+
+**Recomendación**: La consolidación masiva resulta más eficiente temporalmente, permitiendo una revisión sistemática de patrones de error y inconsistencias.
+
 ![image](https://github.com/user-attachments/assets/fa29f664-2fa8-42e4-ae83-aa8eedef76a9)
 
-### 3 Despliegue.
-Para el despliegue, que es lo mas importante, queremos una pagina web que lea los formatos pdfs, que relacione la informacíon que haya en el json con los pdfs, y que normalice fechas por si mismo, así que nos quedaría una cosa así.
+---
+
+## 3. Despliegue y Visualización
+
+El objetivo del despliegue es crear una interfaz web integral que permita:
+- Lectura y visualización de archivos PDF
+- Correlación automática entre información del JSON y documentos PDF
+- Normalización automática de fechas
+- Navegación intuitiva por el corpus documental
+
+### 3.1 Ejemplo en Funcionamiento
+
+**Demostración en vivo**: Como dato curioso y ejemplo práctico de la implementación, se puede consultar una versión funcional del sistema en:
+
+🔗 **[xicobot.github.io](https://xicobot.github.io)**
+
+Esta implementación muestra el sistema completo en funcionamiento con datos históricos del Diario de Madrid del año 1788, permitiendo a los usuarios experimentar directamente con:
+
+- **Navegación temporal**: Selección de fechas específicas mediante interfaz intuitiva
+- **Visualización PDF sincronizada**: Lectura de documentos históricos originales
+- **Extracción musical contextualizada**: Noticias musicales identificadas y organizadas por fecha
+- **Interfaz responsiva**: Adaptación a diferentes dispositivos y tamaños de pantalla
+
+**Características observables en el ejemplo:**
+- Diseño histórico que evoca la época del periódico original
+- Funcionalidad de zoom y navegación por páginas del PDF
+- Sistema de copiado de texto para facilitar la investigación
+- Metadatos automáticos con información de página y fecha
+
+Esta implementación sirve como **prueba de concepto** y referencia visual para futuras adaptaciones del sistema a otros corpus documentales históricos o diferentes períodos temporales.
+
+### 3.2 Implementación Web Local
+
+La solución implementada utiliza HTML5, CSS3 y JavaScript vanilla para crear una interfaz responsiva y funcional:
 
 ```html
 <!DOCTYPE html>
@@ -999,9 +1075,48 @@ Para el despliegue, que es lo mas importante, queremos una pagina web que lea lo
 </body>
 </html>
 ```
-Y para que esto funcione, la estructura tiene que estár organizada, es decir, que en la misma carpeta tiene que estár el index, junto al json, y a los pdfs.
 
+### 3.3 Estructura de Archivos Requerida
 
-## Bibliografía:
-Anthropic API: https://docs.anthropic.com/en/docs/get-started
-Prompt engineering: https://github.com/anthropics/courses/blob/master/prompt_engineering_interactive_tutorial/Anthropic%201P/00_Tutorial_How-To.ipynb
+Para el correcto funcionamiento del sistema, es imprescindible mantener la siguiente estructura organizativa:
+
+```
+proyecto/
+├── index.html          # Interfaz web principal
+├── combined.json       # Datos procesados y consolidados
+├── archivo1.pdf        # Documentos PDF originales
+├── archivo2.pdf
+└── ...
+```
+
+**Nota importante**: Todos los archivos (HTML, JSON y PDFs) deben ubicarse en el mismo directorio para garantizar el acceso adecuado a los recursos.
+
+---
+
+## Bibliografía y Referencias
+
+- **API de Anthropic**: [Documentación oficial](https://docs.anthropic.com/en/docs/get-started)
+- **Ingeniería de Prompts**: [Tutorial interactivo de Anthropic](https://github.com/anthropics/courses/blob/master/prompt_engineering_interactive_tutorial/Anthropic%201P/00_Tutorial_How-To.ipynb)
+
+---
+
+## Conclusiones
+
+Este proyecto demuestra la viabilidad de implementar un sistema automatizado para la extracción y digitalización de información musical histórica. La combinación de herramientas de scraping ético, procesamiento mediante IA y visualización web ofrece una solución integral para la investigación en humanidades digitales.
+
+**Validación práctica**: La implementación funcional disponible en [xicobot.github.io](https://xicobot.github.io) constituye una prueba empírica de la efectividad del sistema, demostrando su capacidad para manejar corpus documentales históricos reales y proporcionar una experiencia de usuario satisfactoria para investigadores y académicos.
+
+**Ventajas del sistema implementado:**
+- Escalabilidad para procesar grandes volúmenes documentales
+- Precisión en la extracción temática específica
+- Interfaz intuitiva para investigadores y usuarios finales
+- Estructura modular que permite adaptaciones futuras
+- **Funcionalidad demostrada**: Sistema validado con datos históricos reales en entorno de producción
+
+**Consideraciones técnicas importantes:**
+- La calidad del prompt es fundamental para la precisión de los resultados
+- El coste de procesamiento debe calcularse previamente para presupuestar adecuadamente
+- La organización estructural de archivos es crítica para el funcionamiento del sistema
+- **Escalabilidad probada**: El ejemplo en funcionamiento demuestra la viabilidad técnica para corpus de mayor envergadura
+
+Este flujo de trabajo establece un precedente replicable para proyectos similares en el ámbito de las humanidades digitales y la preservación del patrimonio documental histórico. La disponibilidad de una implementación funcional facilita la adopción y adaptación del sistema por parte de otras instituciones o proyectos de investigación histórica.
