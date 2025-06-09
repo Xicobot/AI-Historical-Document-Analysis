@@ -1091,6 +1091,13 @@ proyecto/
 
 **Nota importante**: Todos los archivos (HTML, JSON y PDFs) deben ubicarse en el mismo directorio para garantizar el acceso adecuado a los recursos.
 
+### 3.4 Desplliegue
+
+Simplemente para el despliegue, he usado [Mi pagina de github](https://xicobot.github.io) para hacer la demostracíon de un año, y luego para la entrega del resto de años, lo que he hecho ha sido meter todos los ejemplares a drive, con el combined.json y el index.html para que se lo descargen y solo tengan que hacer click derecho al archivo.
+
+![image](https://github.com/user-attachments/assets/e724bdb5-f64b-4c37-a248-75070ffcb94d)
+
+
 ---
 
 ## Bibliografía y Referencias
