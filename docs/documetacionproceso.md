@@ -92,7 +92,7 @@ Esta fase constituye el núcleo del proyecto, requiriendo investigación exhaust
 
 ![image](https://github.com/user-attachments/assets/32c19218-fc00-4fbf-a29b-989c866b44ea)
 
-Tras horas de investigación y refinamiento, el prompt final desarrollado es:
+Tras horas de investigación, en las que tambíen se tienen como opciones de pruebas de otras api's de otras IA's, se ha llegado a la conclusión con que con claude sonnet 3.7 tiene el mejor OCR hasta ahora, y con refinamiento y horas de pulir el prompt el desarrollado es el siguiente:
 
 ## Prompt Optimizado:
 ```prompt
@@ -126,7 +126,7 @@ La fase de limpieza utiliza [limpieza.py](/sw/limpieza.py) para:
 
 Para el manejo eficiente de grandes volúmenes de datos, se proponen dos estrategias:
 
-1. **Consolidación masiva**: Unificación de todos los resultados en un archivo único para revisión global
+1. **Consolidación masiva**: Unificación de todos los resultados en un archivo único para revisión global con el script [combinar_json_add_ejemplares.sh](/sw/combinar_json_add_ejemplares.sh)
 2. **Revisión individual**: Verificación archivo por archivo para casos específicos y corrección de errores puntuales
 
 **Recomendación**: La consolidación masiva resulta más eficiente temporalmente, permitiendo una revisión sistemática de patrones de error y inconsistencias.
