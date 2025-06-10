@@ -11,8 +11,8 @@ Este proyecto forma parte de las iniciativas en **Humanidades Digitales** que in
 
 ### 1.2 Marco Teórico
 El proyecto se enmarca dentro de la corriente de las **Digital Humanities**, específicamente en:
-- **Distant Reading** (Franco Moretti): Análisis cuantitativo de textos literarios
-- **Cultural Analytics** (Lev Manovich): Aplicación de métodos computacionales al análisis cultural
+- **Distant Reading** : Análisis cuantitativo de textos literarios
+- **Cultural Analytics** : Aplicación de métodos computacionales al análisis cultural
 - **Corpus Linguistics**: Estudio de patrones lingüísticos en grandes colecciones textuales
 
 ### 1.3 Objetivos de Investigación
